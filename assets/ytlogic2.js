@@ -63,6 +63,8 @@ $(document).ready(function(){
     
         var player = $("<iframe id='ytplayer' type='text/html' width='640' height='360' src='https://www.youtube.com/embed/'" + imgId + " frameborder='0'></iframe>");
     
+        var player = $("<video width='640' height='360'><source src='https://www.youtube.com/embed/'" + imgId + "></video>")
+
         $("#video-space").hide();
     
         $("#left-space").append(player);
