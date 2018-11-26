@@ -60,10 +60,19 @@ $(document).ready(function(){
         var imgTitle = $(this).attr("data-title");
     
         var imgId = $(this).attr("data-id");
+
+        var player = $("<iframe>");
+
+        player.css("width", "640");
+        player.css("height", "360");
+        player.attr("type", "text/html");
+        player.attr("id", "ytplayer");
+        player.attr("src", "https://www.youtube.com/embed/"+ imgId +"?autoplay=1&origin=https://example.com");
+        player.attr("frameborder", "0");
     
-        var player = $("<iframe id='ytplayer' type='text/html' width='640' height='360' src='https://www.youtube.com/embed/'" + imgId + " frameborder='0'></iframe>");
+        // var player = $("<iframe id='ytplayer' type='text/html' width='640' height='360' src='https://www.youtube.com/embed/'" + imgId + " frameborder='0'></iframe>");
     
-        var player = $("<video width='640' height='360'><source src='https://www.youtube.com/embed/'" + imgId + "></video>")
+        // var player = $("<video width='640' height='360'><source src='https://www.youtube.com/embed/'" + imgId + "></video>");
 
         $("#video-space").hide();
     
