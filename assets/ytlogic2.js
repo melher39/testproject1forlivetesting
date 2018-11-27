@@ -40,19 +40,27 @@ $(document).ready(function(){
             // video snippet will be displayed as a thumbnail
             var video = results[i].snippet.thumbnails.medium.url;
     
+            // title of each video respective to the thumbnail
+            var videoTitle = results[i].snippet.title;
+    
             // dynamically create a new div with the source as the previous thumbnail url
             var resultsDisplayed = $("<img>").attr("src", video);
     
             // retrieve the corresponding video ID and title of the video
             resultsDisplayed.attr("data-id", results[i].id.videoId);
     
-            resultsDisplayed.attr("data-title", results[i].snippet.title);
+            // videoTitle.css()
+    
+            
+    
+            // resultsDisplayed.attr("data-title", results[i].snippet.title);
     
             // attach all the previously attained info to the div created earlier
             resultsDisplayed.append(video);
     
             // display the thumbnails on the pre-existing div
-            $("#thumbnail-space").append("<br>",resultsDisplayed);
+            $("#thumbnail-space").append("<h5>"+ videoTitle + "</h5>", "<p>", resultsDisplayed, "<p>");
+            
             }
     
     
@@ -93,6 +101,7 @@ $(document).ready(function(){
         //add an id, type, source and frameborder attibute to the video player 
         player.attr("type", "text/html");
         player.attr("id", "ytplayer");
+    
         // the video being displayed will have the imgId as its videoId
         player.attr("src", "https://www.youtube.com/embed/"+ imgId +"?autoplay=1&origin=https://example.com");
         player.attr("frameborder", "0");
@@ -111,7 +120,7 @@ $(document).ready(function(){
         $("#content-space").append(player);
     
         
-        console.log(imgTitle);
+        // console.log(imgTitle);
     
         console.log(imgId);
     
