@@ -3,6 +3,8 @@ $(document).ready(function () {
     // Make sure to match the configuration to the script version number in the HTML
     // (Ex. 3.0 != 3.7.0)
     // Initialize Firebase
+
+    $("#todoDiv").hide();
    
     var config = {
       apiKey: "AIzaSyDkgUYhgpvwi8T6F9L8VqI6Al4bLuTQ7w4",
@@ -42,20 +44,24 @@ $(document).ready(function () {
    
    
     function displayToDoList() {
+
+        alert("clicked...");
       // alert("clicked");
+
+      $("#todoDiv").show();
    
    
    
-      if ($('#displaybutton').text() === "View To Do List") {
-        $('#displaybutton').text("Unhide To Do List");
-        $("#todoDiv").show();
-      }
-      else {
+    //   if ($('#displaybutton').text() === "View To Do List") {
+    //     $('#displaybutton').text("Unhide To Do List");
+    //     $("#todoDiv").show();
+    //   }
+    //   else {
    
-        $('#displaybutton').text("View To Do List");
-        $("#todoDiv").hide();
+    //     $('#displaybutton').text("View To Do List");
+    //     $("#todoDiv").hide();
    
-      }
+    //   }
     }
    
     // function that adds new task and displays the input in the todos area
@@ -137,6 +143,8 @@ $(document).ready(function () {
     window.onload = function () {
       $("#todoDiv").hide();
     }
+
+    $(document).on("click", ".user-pick", displayToDoList);
    
    
    

@@ -27,6 +27,7 @@ $("#submit-button").on("click", function(event) {
     $("#results-display").empty();
     $("#results-display-recipe-api").empty();
     $("#results-display-youtube-api").empty();
+    $("#todoDiv").hide();
 
     
 //Recipe API//
@@ -63,7 +64,7 @@ $("#submit-button").on("click", function(event) {
 
 
                                 // Parameters and attributes for the dynamic cardDiv
-                                var cardDiv = $("<div class='card text-center'>");
+                                var cardDiv = $("<div class='card text-center user-pick'>");
                                     cardDiv.attr("style", "width: 14rem;");
                                     cardDiv.attr("data-id", results[i].recipe.label);
                                     cardDiv.attr("data-image", results[i].recipe.image);

@@ -16,6 +16,7 @@ $(document).ready(function(){
         $("#title-youtube-results").empty();
         $("#results-display-recipe-api").empty();
         $("#results-display-youtube-api").empty();
+        $("#todoDiv").hide();
     
         // the search term applied to the ajax call is the user's and is being passed through the function
         var searchTerm = userSearch;
@@ -50,7 +51,7 @@ $(document).ready(function(){
             var videoTitle = results[i].snippet.title;
     
             // dynamically create a new div with the source as the previous thumbnail url
-            var resultsDisplayed = $("<img>").attr("src", video);
+            var resultsDisplayed = $("<img class='user-pick'>").attr("src", video);
 
             // 
             resultsDisplayed.attr("id", "youtube-results")
